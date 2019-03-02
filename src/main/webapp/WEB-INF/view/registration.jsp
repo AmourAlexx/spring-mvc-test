@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
@@ -8,14 +8,15 @@
 </head>
 <body>
 <h1>Enter data:</h1>
-<form:form id="regForm" modelAttribute="user"  action="registerProcess" method="post">
+<%--@elvariable id="user" type="ua.com.levelup.test.springmvc.dto.User"--%>
+<f:form id="regForm" modelAttribute="user"  action="registerProcess" method="post">
     <table align="center">
         <tr>
             <td>
                 <label path="username">Username</label>
             </td>
             <td>
-                <form:input path="username" name="username" id="username" />
+                <f:input path="username" name="username" />
             </td>
         </tr>
         <tr>
@@ -23,7 +24,7 @@
                 <label path="password">Password</label>
             </td>
             <td>
-                <form:input type="password" path="password" name="password" id="password" />
+                <f:input type="password" path="password" name="password" id="password" />
             </td>
         </tr>
         <tr>
@@ -31,7 +32,7 @@
                 <label path="firstname"><spring:message code="user.name"/></label>
             </td>
             <td>
-                <form:input path="firstname" name="firstname" id="firstname" />
+                <f:input path="firstname" name="firstname" id="firstname" />
             </td>
         </tr>
         <tr>
@@ -39,7 +40,7 @@
                 <label path="lastname">LastName</label>
             </td>
             <td>
-                <form:input path="lastname" name="lastname" id="lastname" />
+                <f:input path="lastname" name="lastname" id="lastname" />
             </td>
         </tr>
         <tr>
@@ -47,7 +48,7 @@
                 <label path="email">Email</label>
             </td>
             <td>
-                <form:input path="email" name="email" id="email" />
+                <f:input path="email" name="email" id="email" />
             </td>
         </tr>
         <tr>
@@ -55,7 +56,7 @@
                 <label path="address">Address</label>
             </td>
             <td>
-                <form:input path="address" name="address" id="address" />
+                <f:input path="address" name="address" id="address" />
             </td>
         </tr>
         <tr>
@@ -63,17 +64,10 @@
                 <label path="phone">Phone</label>
             </td>
             <td>
-                <form:input path="phone" name="phone" id="phone" />
+                <f:input path="phone" name="phone" id="phone" />
             </td>
         </tr>
-        <tr>
-            <td>
-                <label path="dateOfBirth">Date of birth</label>
-            </td>
-            <td>
-                <form:input type="date" path="dateOfBirth" />
-            </td>
-        </tr>
+
         <tr>
             <td></td>
             <td>
@@ -83,6 +77,6 @@
         <tr></tr>
 
     </table>
-</form:form>
+</f:form>
 </body>
 </html>

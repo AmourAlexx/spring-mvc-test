@@ -1,5 +1,7 @@
 package ua.com.levelup.test.springmvc.dto;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class User {
@@ -10,6 +12,8 @@ public class User {
     private String email;
     private String address;
     private String phone;
+
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
     private Date dateOfBirth;
 
     public String getUsername() {
