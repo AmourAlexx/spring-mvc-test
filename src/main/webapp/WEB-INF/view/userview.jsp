@@ -1,16 +1,20 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: QuiwiDeveloper
-  Date: 02.03.2019
-  Time: 4:41
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>User</title>
 </head>
 <body>
-$END$
+<h2>Submitted User Information</h2>
+<table>
+    <tr>
+        <td>User Info:</td>
+        <td>${generalInfo}</td>
+    </tr>
+
+    <tr>
+        <td>Contact Info :</td>
+        <td>${contactInfo}</td>
+    </tr>
+</table>
 </body>
 </html>
