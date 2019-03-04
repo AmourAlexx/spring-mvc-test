@@ -1,20 +1,32 @@
 package ua.com.levelup.test.springmvc.dto;
 
-import org.springframework.format.annotation.DateTimeFormat;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import ua.com.levelup.test.springmvc.validation.Phone;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 public class User {
+    @Size(min = 3, max = 30)
+    @NotNull
     private String username;
+
     private String password;
+
     private String firstname;
     private String lastname;
+
+    @Email @NotNull
     private String email;
     private String address;
+
+    @Phone
     private String phone;
 
-    @DateTimeFormat(pattern = "dd.MM.yyyy")
-    private Date dateOfBirth;
 
     public String getUsername() {
         return username;
@@ -72,11 +84,4 @@ public class User {
         this.phone = phone;
     }
 
-    public Date getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
 }
