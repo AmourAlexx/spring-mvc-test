@@ -10,18 +10,18 @@
 <body>
 <spring:message code="app.lang.title"/> : <a href="?lang=ru">Russian</a>|<a href="?lang=uk_UA">Ukrainian</a>
 <h1>Enter data:</h1>
-<%--@elvariable id="user" type="ua.com.levelup.test.springmvc.dto.User"--%>
-<f:form id="regForm" modelAttribute="user"  action="registerProcess" method="post">
+<%--@elvariable id="user" type="ua.com.levelup.test.springmvc.model.User"--%>
+<f:form id="regForm" modelAttribute="user"  action="auth" method="post">
     <table align="center">
         <tr>
             <td>
-                <label path="username">Username</label>
+                <label path="login">Username</label>
             </td>
             <td>
-                <f:input path="username" name="username" />
+                <f:input path="login" name="login" />
             </td>
             <td>
-                <f:errors path="username"/>
+                <f:errors path="login"/>
             </td>
         </tr>
         <tr>

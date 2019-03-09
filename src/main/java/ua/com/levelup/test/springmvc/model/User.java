@@ -1,19 +1,23 @@
-package ua.com.levelup.test.springmvc.dto;
+package ua.com.levelup.test.springmvc.model;
 
 
-import org.springframework.format.annotation.DateTimeFormat;
 import ua.com.levelup.test.springmvc.validation.Phone;
 
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
-import java.util.Date;
 
+@Entity
+@Table(name = "user")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
     @Size(min = 3, max = 30)
     @NotNull
-    private String username;
+    private String login;
 
     private String password;
 
@@ -27,13 +31,12 @@ public class User {
     @Phone
     private String phone;
 
-
-    public String getUsername() {
-        return username;
+    public String getLogin() {
+        return login;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getPassword() {
@@ -84,4 +87,25 @@ public class User {
         this.phone = phone;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
+    }
 }
