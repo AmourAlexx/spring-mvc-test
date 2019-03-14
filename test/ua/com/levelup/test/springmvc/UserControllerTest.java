@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockServletContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -18,6 +19,10 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import javax.servlet.ServletContext;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import ua.com.levelup.test.springmvc.model.User;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { WebConfig.class, DBConfig.class })
@@ -45,8 +50,28 @@ public class UserControllerTest {
 
     @Test
     public void givenHomePageURI_whenMockMVC_thenReturnsIndexJSPViewName() throws Exception{
-        this.mockMvc.perform(get("/users")).andDo(print());
+        this.mockMvc.perform(
+                get("/users"))
+                .andDo(print());
                 //.andExpect(view().name("index"));
+    }
+
+    @Test
+    public void createUserAPI() throws Exception
+    {
+        mockMvc.perform( post("/users")
+                .content(asJsonString(new User("mylogin","JHG65GFD", "firstName4", "lastName4", "email4@mail.com",null,"0962575428")))
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isCreated());
+    }
+
+    public static String asJsonString(final Object obj) {
+        try {
+            return new ObjectMapper().writeValueAsString(obj);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
