@@ -17,11 +17,13 @@ public class UserController {
 
 
     @GetMapping
+    @ResponseStatus(HttpStatus.OK)
     public List<User> findAll(){
         return (List<User>) userRepo.findAll();
     }
 
     @GetMapping(value = "/{id}")
+    @ResponseStatus(HttpStatus.OK)
     public User findOne(@PathVariable("id") Long id) {
         return userRepo.findById(id).get();
     }

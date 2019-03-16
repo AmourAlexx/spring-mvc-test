@@ -31,6 +31,18 @@ public class User {
     @Phone
     private String phone;
 
+    public User(){}
+
+    public User(String login, String password, String firstname, String lastname,String email,String address,String phone){
+        this.login = login;
+        this.password = password;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.address = address;
+        this.phone = phone;
+    }
+
     public String getLogin() {
         return login;
     }
