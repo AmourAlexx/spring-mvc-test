@@ -18,5 +18,8 @@ public class HelloController {
         return "hello";
     }
 
-
+    @GetMapping("/")
+    public String index(){
+        return "index";
+    }
 }

@@ -22,6 +22,7 @@ public class WebConfig implements WebMvcConfigurer {
 
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/index");
+        registry.addViewController("/login");
     }
 
     @Bean

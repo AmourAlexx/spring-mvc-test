@@ -1,4 +1,10 @@
+D:\_aJavaBestTeam\springmvcexp\src\main\java\ua\com\levelup\test\springmvc\controllers\AuthController.java
 D:\_aJavaBestTeam\springmvcexp\src\main\java\ua\com\levelup\test\springmvc\MyWebApplicationInitializer.java
+D:\_aJavaBestTeam\springmvcexp\src\main\java\ua\com\levelup\test\springmvc\DBConfig.java
+D:\_aJavaBestTeam\springmvcexp\src\main\java\ua\com\levelup\test\springmvc\validation\Phone.java
 D:\_aJavaBestTeam\springmvcexp\src\main\java\ua\com\levelup\test\springmvc\App.java
 D:\_aJavaBestTeam\springmvcexp\src\main\java\ua\com\levelup\test\springmvc\WebConfig.java
+D:\_aJavaBestTeam\springmvcexp\src\main\java\ua\com\levelup\test\springmvc\repo\UserRepo.java
+D:\_aJavaBestTeam\springmvcexp\src\main\java\ua\com\levelup\test\springmvc\validation\PhoneValidator.java
+D:\_aJavaBestTeam\springmvcexp\src\main\java\ua\com\levelup\test\springmvc\model\User.java
 D:\_aJavaBestTeam\springmvcexp\src\main\java\ua\com\levelup\test\springmvc\controllers\HelloController.java
