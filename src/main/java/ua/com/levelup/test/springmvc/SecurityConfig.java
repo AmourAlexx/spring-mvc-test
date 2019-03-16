@@ -10,8 +10,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.access.AccessDeniedHandler;
 
+import javax.sql.DataSource;
+
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    /*@Autowired
+    private DataSource dataSource;*/
 
     @Autowired
     private AccessDeniedHandler accessDeniedHandler;
@@ -31,6 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/login")
+
                 .loginProcessingUrl("/perform_login")
                 .defaultSuccessUrl("/hello", true)
                 .permitAll()
@@ -53,6 +59,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
+
         return new BCryptPasswordEncoder();
     }
+
+    /*@Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
+        auth.jdbcAuthentication().dataSource(dataSource)
+                .usersByUsernameQuery("select login, password, true"
+                        + " from users where login like ?")
+                .authoritiesByUsernameQuery("select username, 'USER' ")
+                .passwordEncoder(passwordEncoder());
+    }*/
 }
