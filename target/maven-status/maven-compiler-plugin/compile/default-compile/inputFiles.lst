@@ -1,4 +1,12 @@
-D:\_aJavaBestTeam\springmvcexp\src\main\java\ua\com\levelup\test\springmvc\MyWebApplicationInitializer.java
-D:\_aJavaBestTeam\springmvcexp\src\main\java\ua\com\levelup\test\springmvc\App.java
-D:\_aJavaBestTeam\springmvcexp\src\main\java\ua\com\levelup\test\springmvc\WebConfig.java
-D:\_aJavaBestTeam\springmvcexp\src\main\java\ua\com\levelup\test\springmvc\controllers\HelloController.java
+E:\workspace\spring-mvc-test\src\main\java\ua\com\levelup\test\springmvc\controllers\AuthController.java
+E:\workspace\spring-mvc-test\src\main\java\ua\com\levelup\test\springmvc\validation\PhoneValidator.java
+E:\workspace\spring-mvc-test\src\main\java\ua\com\levelup\test\springmvc\model\User.java
+E:\workspace\spring-mvc-test\src\main\java\ua\com\levelup\test\springmvc\App.java
+E:\workspace\spring-mvc-test\src\main\java\ua\com\levelup\test\springmvc\WebConfig.java
+E:\workspace\spring-mvc-test\src\main\java\ua\com\levelup\test\springmvc\controllers\UserController.java
+E:\workspace\spring-mvc-test\src\main\java\ua\com\levelup\test\springmvc\repo\UserRepo.java
+E:\workspace\spring-mvc-test\src\main\java\ua\com\levelup\test\springmvc\DBConfig.java
+E:\workspace\spring-mvc-test\src\main\java\ua\com\levelup\test\springmvc\MyWebApplicationInitializer.java
+E:\workspace\spring-mvc-test\src\main\java\ua\com\levelup\test\springmvc\SwaggerConfig.java
+E:\workspace\spring-mvc-test\src\main\java\ua\com\levelup\test\springmvc\validation\Phone.java
+E:\workspace\spring-mvc-test\src\main\java\ua\com\levelup\test\springmvc\controllers\HelloController.java

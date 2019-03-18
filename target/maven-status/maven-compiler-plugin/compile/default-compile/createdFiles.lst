@@ -1,4 +1,12 @@
 ua\com\levelup\test\springmvc\controllers\HelloController.class
+ua\com\levelup\test\springmvc\repo\UserRepo.class
 ua\com\levelup\test\springmvc\App.class
+ua\com\levelup\test\springmvc\validation\Phone.class
 ua\com\levelup\test\springmvc\WebConfig.class
+ua\com\levelup\test\springmvc\SwaggerConfig.class
+ua\com\levelup\test\springmvc\controllers\AuthController.class
+ua\com\levelup\test\springmvc\DBConfig.class
+ua\com\levelup\test\springmvc\validation\PhoneValidator.class
 ua\com\levelup\test\springmvc\MyWebApplicationInitializer.class
+ua\com\levelup\test\springmvc\controllers\UserController.class
+ua\com\levelup\test\springmvc\model\User.class
