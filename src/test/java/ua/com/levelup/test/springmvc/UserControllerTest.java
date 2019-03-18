@@ -1,11 +1,13 @@
 package ua.com.levelup.test.springmvc;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockServletContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -16,6 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+import ua.com.levelup.test.springmvc.model.User;
 
 import javax.servlet.ServletContext;
 
@@ -35,7 +38,7 @@ public class UserControllerTest {
     }
 
     @Test
-    public void givenWac_whenServletContext_thenItProvidesGreetController() {
+    public void givenWac_whenServletContext_thenItProvidesUserController() {
         ServletContext servletContext = wac.getServletContext();
 
         Assert.assertNotNull(servletContext);
@@ -44,9 +47,30 @@ public class UserControllerTest {
     }
 
     @Test
-    public void givenHomePageURI_whenMockMVC_thenReturnsIndexJSPViewName() throws Exception{
-        this.mockMvc.perform(get("/users")).andDo(print());
+    public void givenFindAllUsers_whenMockMVC_thenReturnsAllUsers() throws Exception{
+        mockMvc.perform(
+                get("/users"))
+                .andExpect(status().isOk());
                 //.andExpect(view().name("index"));
     }
 
+
+    @Test
+    public void createUserAPI() throws Exception
+    {
+        mockMvc.perform( post("/users")
+                .content(asJsonString(new User("mylogin", "xxx", "firstName4", "lastName4", "email4@mail.com",null,"82348653123")))
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isCreated());
+
+    }
+
+    public static String asJsonString(final Object obj) {
+        try {
+            return new ObjectMapper().writeValueAsString(obj);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
