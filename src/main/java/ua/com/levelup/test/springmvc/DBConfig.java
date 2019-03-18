@@ -27,7 +27,7 @@ public class DBConfig {
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/users_test?createDatabaseIfNotExist=true");
         dataSource.setUsername( "root" );
-        dataSource.setPassword( "qwerty" );
+        dataSource.setPassword( "admin" );
         return dataSource;
     }
 
@@ -47,7 +47,7 @@ public class DBConfig {
 
     private Properties additionalProperties() {
         Properties properties = new Properties();
-        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL57Dialect");
+        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL55Dialect");
         properties.setProperty("hibernate.show_sql", "true");
         properties.setProperty("hibernate.format_sql", "true");
         properties.setProperty("hibernate.hbm2ddl.auto", "update");
